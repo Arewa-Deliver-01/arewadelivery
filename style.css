@@ -1,1 +1,245 @@
-body { font-family: Arial; }
+/* ===========================================================
+   AREWADELIVER — GLOBAL RESPONSIVE STYLE (OPTION C HYBRID)
+   Clean startup + energetic identity
+=========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ======================================
+   NAVBAR
+====================================== */
+
+.navbar {
+  width: 100%;
+  background: #0e8f6a;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #0e8f6a;
+  padding: 15px;
+}
+
+.mobile-nav a {
+  padding: 10px 0;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-size: 1rem;
+}
+
+/* ======================================
+   HERO (PUBLIC PAGES)
+====================================== */
+
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0e8f6a, #38bdf8);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ======================================
+   FORMS (LOGIN / REGISTER / AUTH)
+====================================== */
+
+.auth-container {
+  max-width: 420px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0e8f6a;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #0e8f6a;
+  outline: none;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0e8f6a;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #0c7758;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.auth-links a {
+  color: #0e8f6a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ======================================
+   DASHBOARD CARDS
+====================================== */
+
+.dashboard {
+  padding: 30px 20px;
+}
+
+.dashboard h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #0e8f6a;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #0e8f6a;
+  color: #fff;
+  font-size: 0.95rem;
+  margin-top: 40px;
+}
+
+/* ======================================
+   RESPONSIVE BREAKPOINTS
+====================================== */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .auth-container {
+    margin: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .auth-container {
+    padding: 20px;
+  }
+  }
