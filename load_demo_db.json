@@ -1,0 +1,24 @@
+/* Load demo DB from JSON into localStorage.
+   Import this script ONCE, then remove it.
+*/
+
+async function loadDemoDB() {
+  try {
+    const res = await fetch('./db/demo_db.json');
+    const db = await res.json();
+
+    if (db.users) {
+      localStorage.setItem('arewadeliver_users', JSON.stringify(db.users));
+    }
+    if (db.reset_tokens) {
+      localStorage.setItem('arewadeliver_reset_tokens', JSON.stringify(db.reset_tokens));
+    }
+
+    alert('Demo database loaded successfully!');
+  } catch (err) {
+    console.error('DB load failed:', err);
+    alert('Failed to load demo DB.');
+  }
+}
+
+loadDemoDB();
