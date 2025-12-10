@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Live Chat — Arewadeliver</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Small live-chat mock styles complementing main CSS */
+    .chat-wrap{max-width:960px;margin:30px auto;padding:0 20px}
+    .chat-box{height:520px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.05);display:flex;flex-direction:column;overflow:hidden}
+    .chat-feed{flex:1;padding:18px;overflow:auto}
+    .message{margin-bottom:12px;max-width:70%;}
+    .me{align-self:flex-end;background:linear-gradient(90deg,#0ea5a3,#0891b2);color:#fff;padding:10px 14px;border-radius:10px}
+    .them{align-self:flex-start;background:#f1f5f9;padding:10px 14px;border-radius:10px}
+    .chat-input{display:flex;padding:14px;border-top:1px solid #eee}
+    .chat-input input{flex:1;padding:12px;border-radius:8px;border:1px solid #e6eef0}
+    .chat-input button{margin-left:8px;padding:12px 14px;border-radius:8px;background:#0e8f6a;color:#fff;border:0}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="navbar"><a class="logo" href="index.html">Arewadeliver</a><div class="nav-links"><a href="support.html">Support</a><a href="help.html">Help</a></div><div class="menu-btn" onclick="toggleMenu()">☰</div></nav>
+  <div class="mobile-nav" id="mobileNav"><a href="support.html">Support</a><a href="help.html">Help</a></div>
+</header>
+
+<main class="chat-wrap">
+  <h1>Live Chat (Mock)</h1>
+  <p class="lead">Prototype of live chat — connect with our support team in real-time.</p>
+
+  <div class="chat-box" role="region" aria-label="Live chat">
+    <div class="chat-feed" id="chatFeed">
+      <div class="message them"><strong>Support:</strong> Hello! How can we help today?</div>
+      <div class="message me">Hi — I have an issue with my last order.</div>
+    </div>
+
+    <div class="chat-input">
+      <input id="chatInput" placeholder="Type a message..." />
+      <button id="chatSend">Send</button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><p>© 2025 Arewadeliver</p></div></footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Simple mock chat behavior (client-side only)
+  document.getElementById('chatSend').addEventListener('click', function(){
+    var input = document.getElementById('chatInput');
+    if(!input.value.trim()) return;
+    var feed = document.getElementById('chatFeed');
+    var msg = document.createElement('div'); msg.className='message me'; msg.textContent = input.value;
+    feed.appendChild(msg); feed.scrollTop = feed.scrollHeight;
+    input.value='';
+    setTimeout(function(){
+      var reply = document.createElement('div'); reply.className='message them'; reply.innerHTML = '<strong>Support:</strong> Thanks — we received your message and will respond shortly.';
+      feed.appendChild(reply); feed.scrollTop = feed.scrollHeight;
+    }, 800);
+  });
+</script>
+</body>
+</html>
